@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.covidAlert.covidAlertService.model.AlertStatus;
+import com.covidAlert.covidAlertService.model.CovidApiData;
 import com.covidAlert.covidAlertService.model.StateData;
 import com.covidAlert.covidAlertService.model.SummaryData;
 
@@ -20,7 +21,7 @@ public class AlertService {
 		AlertStatus status = new AlertStatus();
 
 		StateData statedata = dataProvider.getStateData(state);
-		
+
 		status.setStateData(statedata);
 
 		if (statedata.getTotalConfirmed() < 1000) {
@@ -40,6 +41,13 @@ public class AlertService {
 	public SummaryData getOverAllSummary() {
 		// TODO Auto-generated method stub
 		return dataProvider.getOverAllSummary("summary");
+	}
+
+	public CovidApiData getCovidCompleteData() {
+		// TODO Auto-generated method stub
+
+		return dataProvider.getCovidCompleteData();
+
 	}
 
 }

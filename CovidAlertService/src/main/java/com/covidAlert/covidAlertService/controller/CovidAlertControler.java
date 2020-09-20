@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.covidAlert.covidAlertService.model.AlertStatus;
+import com.covidAlert.covidAlertService.model.CovidApiData;
 import com.covidAlert.covidAlertService.model.SummaryData;
 import com.covidAlert.covidAlertService.service.AlertService;
 
@@ -28,5 +29,15 @@ public class CovidAlertControler {
 
 		return service.getOverAllSummary();
 
+	}
+	
+	//CovidApiData
+	
+	//get complete data
+	
+	@GetMapping("/india/covidCompleteData")
+	CovidApiData getCovidCompleteData() {
+		
+		return service.getCovidCompleteData();
 	}
 }

@@ -28,9 +28,14 @@ public class Covid19DataProvide {
 	}
 
 	public SummaryData getOverAllSummary(String string) {
-		// TODO Auto-generated method stub
+		//TODO Auto-generated method stub
 
 		CovidApiData covidApiData = rest.getForObject(url, CovidApiData.class);
 		return covidApiData.getData().getSummary();
+	}
+
+	public CovidApiData getCovidCompleteData() {
+		// TODO Auto-generated method stub
+		return rest.getForObject(url, CovidApiData.class);
 	}
 }
